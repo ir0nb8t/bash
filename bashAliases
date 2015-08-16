@@ -1,0 +1,58 @@
+####################
+### Bash Aliases ###
+####################
+
+##safety nets
+#do not delete / or prompt if deleting more than 3 files at a time
+alias rm='rm -I --preserve-root'
+
+# Parenting changing perms on /
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
+# confirmation
+alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
+
+# Directory listing
+alias ls="ls -CF"
+alias sl="ls"
+alias lsl="ls -lhFA | less"
+
+# Disk/Memory/Process Usage 
+alias df="df -Tha --total"
+alias du="du -ach | sort -h"
+alias free="free -mt"
+alias psg="ps aux | grep -v grep | grep -i -e VSZ -e" # Search processes
+
+# Directory Creation
+alias mkdir="mkdir -pv"
+
+# Disk Dump (DD) alias
+alias ddprogress="watch -n5 'sudo kill -USR1 $(pgrep ^dd)'"
+
+# Wget
+alias wget="wget -c"
+
+# Grep
+alias grep="grep --color=auto"
+alias egrep="egrep --color=auto"
+alias fgrep="fgrep --color=auto"
+
+# Ping
+alias pinghostup="ping -i 30 -a"
+
+# Check my ip
+alias myip="curl -s checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
+
+# Tmux aliases
+alias tmux='tmux -2'
+alias ta='tmux attach -t'
+alias tnew='tmux new -s'
+alias tls='tmux ls'
+alias tkill='tmux kill-session -t'
+
+# NFS Shortcuts
+alias nfsstash="sudo mount -t nfs 10.0.1.11:/mnt/media/nfs/stash /home/$USER/mnt/nfs"
