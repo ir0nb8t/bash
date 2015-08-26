@@ -56,3 +56,7 @@ alias tkill='tmux kill-session -t'
 
 # NFS Shortcuts
 alias nfsstash="sudo mount -t nfs 10.0.1.11:/mnt/media/nfs/stash /home/$USER/mnt/nfs"
+
+# Youtube-dl
+alias ytdl-misc='youtube-dl -o "~/Videos/youtube/misc/%(title)s-%(id)s.%(ext)s"'
+alias ytdl-doc='youtube-dl -o "~/Videos/youtube/documentaries/%(title)s-%(id)s.%(ext)s"'
